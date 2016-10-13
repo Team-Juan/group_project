@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IComputerDAO {
 
-	void createRecord(Computer computer);
+	void createData(Computer computer);
 	
 	Computer retrieveDataById(int id);
 	
