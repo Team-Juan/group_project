@@ -35,6 +35,33 @@ public class ComputerDAO implements IComputerDAO {
             System.out.println("createRecord SQLException: " + ex.getMessage());
         }
     }
+    
+    @Override
+    public List<Computer> searchData(String field, String search) {
+    	final List<Computer> myList = new ArrayList<>();
+    	final String QUERY = "SELECT * FROM computer WHERE " + field + " LIKE " + "'%" + search + "%'";
+
+        try (Connection con = DBConnection.getConnection(); 
+                PreparedStatement stmt = con.prepareStatement(QUERY)) {
+            if (DEBUG) {
+                System.out.println(stmt.toString());
+            }
+            ResultSet rs = stmt.executeQuery(QUERY);
+
+            while (rs.next()) {
+                myList.add(new Computer(
+                        rs.getInt("compId"), 
+                        rs.getString("brand"), 
+                        rs.getString("model"),
+                        rs.getString("features"), 
+                        rs.getString("location")));
+            }
+        } catch (SQLException ex) {
+            System.out.println("searchData SQLException: " + ex.getMessage());
+        }
+
+        return myList;
+    }
 
     @Override
     public Computer retrieveDataById(int id) {

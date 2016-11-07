@@ -5,6 +5,7 @@ import java.util.List;
 public interface IComputerDAO {
 
 	void createData(Computer computer);
+	List<Computer> searchData(String field, String search);
 	
 	Computer retrieveDataById(int id);
 	

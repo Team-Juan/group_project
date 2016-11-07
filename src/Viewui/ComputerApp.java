@@ -17,7 +17,7 @@ public class ComputerApp {
 
     private void menuLoop() {
         int id;
-        String brand, model, features, location;
+        String brand, model, features, location, field, search;
         String choice = "1";
         while (!choice.equals("0")) {
             System.out.println("\nComputer App");
@@ -27,7 +27,8 @@ public class ComputerApp {
             System.out.println("3 = Retrieve Record");
             System.out.println("4 = Update Record");
             System.out.println("5 = Delete Record");
-            choice = Validator.getLine(sc, "Number of choice: ", "^[0-5]$");
+            System.out.println("6 = Search Record");
+            choice = Validator.getLine(sc, "Number of choice: ", "^[0-6]$");
 
             switch (choice) {
                 case "1":
@@ -61,6 +62,11 @@ public class ComputerApp {
                         compList.deleteData(id);
                     }
                     break;
+                case "6":
+                	field = Validator.getLine(sc,  "Field to search for: ");
+                	search = Validator.getLine(sc,  "String to search for: ");
+                	System.out.println(compList.searchData(field, search));
+                	break;
             }
         }
     }

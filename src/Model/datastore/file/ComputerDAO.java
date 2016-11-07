@@ -147,4 +147,9 @@ public class ComputerDAO implements IComputerDAO {
 
         return sb.toString();
     }
+
+	@Override
+	public List<Computer> searchData(String field, String search) {
+		return myList;
+	}
 }
