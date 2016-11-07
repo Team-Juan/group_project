@@ -1,6 +1,6 @@
 package Model.datastore.mysql;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -69,7 +69,7 @@ public class ComputerDAO implements IComputerDAO {
     public List<Computer> retrieveAllData() {
         final List<Computer> myList = new ArrayList<>();
         final String QUERY = "select compId, brand, model, features, "
-                + "location for compId";
+                + "location from computer";
 
         try (Connection con = DBConnection.getConnection(); 
                 PreparedStatement stmt = con.prepareStatement(QUERY)) {
