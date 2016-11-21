@@ -28,7 +28,8 @@ public class ComputerApp {
             System.out.println("4 = Update Record");
             System.out.println("5 = Delete Record");
             System.out.println("6 = Search Record");
-            choice = Validator.getLine(sc, "Number of choice: ", "^[0-6]$");
+            System.out.println("7 = Location Search");
+            choice = Validator.getLine(sc, "Number of choice: ", "^[0-7]$");
 
             switch (choice) {
                 case "1":
@@ -66,6 +67,10 @@ public class ComputerApp {
                 	field = Validator.getLine(sc,  "Field to search for: ");
                 	search = Validator.getLine(sc,  "String to search for: ");
                 	System.out.println(compList.searchData(field, search));
+                	break;
+                case "7":
+                	search = Validator.getLine(sc,  "Location to search for: ");
+                	System.out.println(compList.searchData("location", search));
                 	break;
             }
         }
