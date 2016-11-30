@@ -13,6 +13,10 @@ import Model.IComputerDAO;
 import Model.datastore.mysql.ComputerDAO;
 
 public class ComputerApp {
+	
+	/**
+	 * This application can retrieve, update, delete, and modify database information about computer systems.
+	 */
 	IComputerDAO compList = new ComputerDAO();
     Scanner sc = new Scanner(System.in);
 
