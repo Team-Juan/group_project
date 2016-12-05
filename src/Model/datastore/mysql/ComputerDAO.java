@@ -18,14 +18,15 @@ public class ComputerDAO implements IComputerDAO {
     public void createData(Computer computer) {
         final String QUERY = "insert into computer "
                 + "(compId, brand, model, features, location) "
-                + "VALUES (null, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?)";
 
         try (Connection con = DBConnection.getConnection(); 
                 PreparedStatement stmt = con.prepareStatement(QUERY);) {
-            stmt.setString(1, computer.getBrand());
-            stmt.setString(2, computer.getModel());
-            stmt.setString(3, computer.getFeatures());
-            stmt.setString(4, computer.getLocation());
+        	stmt.setInt(1, computer.getCompId());
+            stmt.setString(2, computer.getBrand());
+            stmt.setString(3, computer.getModel());
+            stmt.setString(4, computer.getFeatures());
+            stmt.setString(5, computer.getLocation());
             if (DEBUG) {
                 System.out.println(stmt.toString());
             }

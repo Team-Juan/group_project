@@ -12,11 +12,14 @@ import Model.Computer;
 import Model.IComputerDAO;
 import Model.datastore.mysql.ComputerDAO;
 
+/**
+ * This application can retrieve, update, delete, and modify database information about computer systems.
+ * @author Team-Juan
+ * @version 1.0
+ */
+
 public class ComputerApp {
 	
-	/**
-	 * This application can retrieve, update, delete, and modify database information about computer systems.
-	 */
 	IComputerDAO compList = new ComputerDAO();
     Scanner sc = new Scanner(System.in);
 
@@ -65,7 +68,7 @@ public class ComputerApp {
                     compList.updateData(new Computer(id, brand, model, features, location));
                     break;
                 case "5":
-                    id = Validator.getInt(sc, "Employee ID to delete: ");
+                    id = Validator.getInt(sc, "Computer ID to delete: ");
                     System.out.println(compList.retrieveDataById(id));
                     String ok = Validator.getLine(sc, "Delete this record? (y/n) ", "^[yYnN]$");
                     if (ok.equalsIgnoreCase("Y")) {
