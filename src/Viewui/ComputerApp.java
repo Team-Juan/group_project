@@ -49,6 +49,7 @@ public class ComputerApp {
             System.out.println("5 = Delete Record");
             System.out.println("6 = Search Record");
             System.out.println("7 = Location Search");
+            System.out.println("8 = Location Search");
             choice = Validator.getLine(sc, "Number of choice: ", "^[0-7]$");
 
             switch (choice) {
