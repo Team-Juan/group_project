@@ -22,10 +22,18 @@ public class ComputerApp {
 	
 	IComputerDAO compList = new ComputerDAO();
     Scanner sc = new Scanner(System.in);
+    
+    /**
+     * Launches the console based menu.
+     */
 
     public ComputerApp() {
         menuLoop();
     }
+    
+    /**
+     * The main code for the console based menu. Presents a series of options to manipulate the data in the database.
+     */
 
     private void menuLoop() {
         int id;
@@ -89,6 +97,7 @@ public class ComputerApp {
     }
 
     /**
+     * The main method that runs the program.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

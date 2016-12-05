@@ -17,9 +17,13 @@ public class ComputerAppTest {
 	
 	IComputerDAO compList = new ComputerDAO();
 	
-
 	@Test
 	public void testComputerApp() {
+		
+		/**
+		 * Runs a series of three tests. Testing the search data feature, the create data feature, and the delete data feature. 
+		 */
+		
 		int testing = 0;
 		
 		
