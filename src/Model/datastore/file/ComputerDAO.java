@@ -18,6 +18,13 @@ import java.util.Properties;
 import Model.Computer;
 import Model.IComputerDAO;
 
+/**
+ * The unused file database system. The working project uses the MySQL database version.
+ * @author Team-Juan
+ * @version 0.1
+ * @deprecated This code is unused.
+ */
+
 public class ComputerDAO implements IComputerDAO {
 
 	protected String fileName = null;

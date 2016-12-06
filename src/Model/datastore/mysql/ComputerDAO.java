@@ -1,6 +1,7 @@
 package Model.datastore.mysql;
 
 import java.sql.*;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,9 +11,16 @@ import java.util.List;
 import Model.Computer;
 import Model.IComputerDAO;
 
+/**
+ * The primary data access code of all of the methods for the computer database program.
+ * @author Team-Juan
+ * @version 1.0
+ */
+
 public class ComputerDAO implements IComputerDAO {
 
 	protected final static boolean DEBUG = true;
+	
 
     @Override
     public void createData(Computer computer) {
