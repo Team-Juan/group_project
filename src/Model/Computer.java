@@ -10,8 +10,8 @@ public class Computer {
 	
 
 	private int compId;
-	private String model;
 	private String brand;
+	private String model;
 	private String features;
 	private String location;
 	
@@ -21,8 +21,8 @@ public class Computer {
 	
 	public Computer() {
 		compId = 0;
-		model = "";
 		brand = "";
+		model = "";
 		features = "";
 		location = "";
 	}
@@ -30,16 +30,16 @@ public class Computer {
 	/**
 	 * This creates the computer object.
 	 * @param compId This is the ID of the computer in the database.
-	 * @param model This is the model of the computer.
 	 * @param brand This is the brand name of the computer.
+	 * @param model This is the model of the computer.
 	 * @param features This is the various hardware specifications of the computer.
 	 * @param location This is where the location of the computer is.
 	 */
 	
-	public Computer(int compId, String model, String brand, String features, String location) {
+	public Computer(int compId, String brand, String model, String features, String location) {
 		this.compId = compId;
-		this.model = model;
 		this.brand = brand;
+		this.model = model;
 		this.features = features;
 		this.location = location;
 	}
@@ -60,6 +60,19 @@ public class Computer {
 	
 	public void setCompId(int compId) {
 		this.compId = compId;
+	}
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	/**
+	 * Sets the brand name of the computer object.
+	 * @param brand A string
+	 */
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 	
 	/**
@@ -84,19 +97,6 @@ public class Computer {
 	 * Gets the brand name of the computer object.
 	 * @return The computer brand name as a string
 	 */
-	
-	public String getBrand() {
-		return brand;
-	}
-	
-	/**
-	 * Sets the brand name of the computer object.
-	 * @param brand A string
-	 */
-	
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
 	
 	/**
 	 * Gets the specifications of the computer object.
@@ -137,8 +137,8 @@ public class Computer {
 	
 	@Override
 	public String toString() {
-		return String.format("%5d : %s, %s, %s, %s", this.getCompId(), this.getModel(),
-				this.getBrand(), this.getFeatures(), this.getLocation());
+		return String.format("%5d : %s, %s, %s, %s", this.getCompId(), this.getBrand(),
+				this.getModel(), this.getFeatures(), this.getLocation());
 		
 	}
 }

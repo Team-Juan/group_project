@@ -11,7 +11,7 @@ import java.util.List;
 public interface IComputerDAO {
 	
 	/**
-	 * Creates a new comuter object in the database.
+	 * Creates a new computer object in the database.
 	 * @param computer The computer object to be created.
 	 */
 
